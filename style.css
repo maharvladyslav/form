@@ -3,7 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-input textarea {
+input,
+textarea {
   border: none;
   outline: none;
 }
@@ -33,4 +34,81 @@ body {
 }
 .form_btn {
   align-self: center;
+}
+.form_element {
+  display: flex;
+  gap: 25px;
+  border: 2px solid gray;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.form_element-svg {
+  width: 30px;
+  height: 30px;
+  fill: gray;
+}
+.form_element-icon {
+  position: relative;
+}
+.form_element-icon::after {
+  content: "";
+  width: 2px;
+  height: 32px;
+  position: absolute;
+  background-color: gray;
+  top: -1px;
+  right: -10px;
+}
+
+.form_element-input {
+  flex-grow: 1;
+}
+.input-check {
+  border: none;
+}
+
+.form_btn {
+  background-color: teal;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  font-style: italic;
+  padding: 10px 20px;
+}
+.input-check_checkbox {
+  appearance: none;
+  width: 35px;
+  height: 20px;
+  border: 1px solid gray;
+  border-radius: 25px;
+  position: relative;
+}
+.input-check_checkbox::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: rgb(207, 204, 204);
+  position: absolute;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  box-shadow: 0px 0px 3px 1px gray;
+  transition-property: left, background-color, box-shadow;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+.input-check_checkbox:checked::before {
+  left: 18px;
+  background-color: black;
+  box-shadow: 0px 0px 3px 0px rgb(22, 21, 21);
+}
+.form_element:focus-within {
+  border: 2px solid teal;
+}
+.form_element:focus-within .form_element-svg {
+  fill: teal;
+}
+.form_element:focus-within .form_element-icon::after {
+  background-color: teal;
 }
